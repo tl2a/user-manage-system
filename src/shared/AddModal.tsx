@@ -47,7 +47,7 @@ function AddModal(props:modal) {
   ]);
 
   const [user, setUser] = useState<any>({
-    "userId": uuidv4(),
+    "userId": "",
     "firstName": "",
     "lastName": "",
     "userGroup": "",
@@ -159,9 +159,9 @@ function AddModal(props:modal) {
             </Button>
         </Form>}
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer> */}
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Cancel</Button>
+        </Modal.Footer>
       </Modal>
     );
   }

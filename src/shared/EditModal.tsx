@@ -56,7 +56,30 @@ function EditModal(props:modal) {
     }
   ]);
 
-  const [user, setUser] = useState<any>();
+  const [user, setUser] = useState<any>({
+    "userId": "",
+    "firstName": "",
+    "lastName": "",
+    "userGroup": "",
+    "userAuthorizations": [
+      {
+        "authorizationKey": "jumping",
+        "granted": false
+      },
+      {
+        "authorizationKey": "standing",
+        "granted": false
+      },
+      {
+        "authorizationKey": "sitting",
+        "granted": false
+      },
+      {
+        "authorizationKey": "running",
+        "granted": false
+      }
+    ]
+  });
   
   useEffect(() => {
     setUser(props.details);
@@ -125,9 +148,9 @@ function EditModal(props:modal) {
             </Button>
         </Form>}
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer> */}
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Cancel</Button>
+        </Modal.Footer>
       </Modal>
     );
   }

@@ -25,7 +25,7 @@ function App() {
             <th>First Name</th>
             <th>Last Name</th>
             <th>User Group</th>
-            <th>user Authorization</th>
+            <th>User Authorization</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@ function App() {
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
               <td>{user.userGroup}</td>
-              <td>{((user.userAuthorizations).map(it => {if(it.granted) return it.authorizationKey})).toString()}</td>
+              <td>{((user.userAuthorizations).map(it => {if(it.granted) return it.authorizationKey})).toString().replace(/(^,)|(,$)/g, "")}</td>
             </tr>))
           }
         </tbody>
