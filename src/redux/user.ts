@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+// Loading Data from JSON
+import db from './DB/user-data.json';
 
 export interface UserState {
   value: {
@@ -15,56 +17,7 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  value: [
-    {
-      "userId": "6ddca37b",
-      "firstName": "John",
-      "lastName": "Appleseed",
-      "userGroup": "Operator",
-      "userAuthorizations": [
-        {
-          "authorizationKey": "jumping",
-          "granted": true
-        },
-        {
-          "authorizationKey": "standing",
-          "granted": true
-        },
-        {
-          "authorizationKey": "sitting",
-          "granted": true
-        },
-        {
-          "authorizationKey": "running",
-          "granted": false
-        }
-      ]
-    },
-    {
-      "userId": "cc07b3c3",
-      "firstName": "Janet",
-      "lastName": "Williams",
-      "userGroup": "Administrator",
-      "userAuthorizations": [
-        {
-          "authorizationKey": "jumping",
-          "granted": true
-        },
-        {
-          "authorizationKey": "standing",
-          "granted": true
-        },
-        {
-          "authorizationKey": "sitting",
-          "granted": true
-        },
-        {
-          "authorizationKey": "running",
-          "granted": false
-        }
-      ]
-    }
-],
+  value: db,
 }
 
 export const UserSlice = createSlice({

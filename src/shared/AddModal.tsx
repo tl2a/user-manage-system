@@ -47,7 +47,7 @@ function AddModal(props:modal) {
   ]);
 
   const [user, setUser] = useState<any>({
-    "userId": "",
+    "userId": uuidv4(),
     "firstName": "",
     "lastName": "",
     "userGroup": "",
